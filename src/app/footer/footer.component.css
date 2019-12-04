@@ -1,0 +1,14 @@
+.myFooter {
+    text-align: center;
+    border-top: 1px black solid;
+    background-color: rgb(253, 233, 220);
+    color: darkred;
+    padding-top: 10px;
+    padding-bottom: 1px;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 14px;
+    box-shadow: black 0px 10px 35px;
+}

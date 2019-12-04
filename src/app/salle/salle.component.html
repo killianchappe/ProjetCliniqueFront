@@ -1,0 +1,39 @@
+<div class="container myTableSalle">
+    <div class="row">
+        <div class="col-sm-0">
+        </div>
+        <div class="col-sm-12">
+            <h3>Liste des salles</h3>
+            <hr />
+            <div>
+                <input class="form-control mySearch" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+                    placeholder="Rechercher une salle">
+            </div>
+            <table class="table table-sm table-hover myTable">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Numero</th>
+                        <th scope="col">Type</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let salle of listSalles | filter:searchText">
+                        <td>{{salle.idSalle}}</td>
+                        <td>{{salle.numeroSalle}}</td>
+                        <td>{{salle.typeSalle}}</td>
+                        <td><button type="button" [routerLink]="['/updatesalle',salle.idSalle]"
+                                class="glyphicon glyphicon-cog btn btn-warning"></button></td>
+                        <td><button type="button" (click)="deleteSalle(salle.idSalle, i)"
+                                class="glyphicon glyphicon-trash btn btn-danger"></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-0">
+        </div>
+    </div>
+</div>

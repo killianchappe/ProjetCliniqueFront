@@ -1,0 +1,37 @@
+<div class="container myTableEtat">
+    <div class="row">
+        <div class="col-sm-0">
+        </div>
+        <div class="col-sm-12">
+            <h3>Liste des états</h3>
+            <hr />
+            <div>
+                <input class="form-control mySearch" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+                    placeholder="Rechercher un état">
+            </div>
+            <table class="table table-sm table-hover myTable">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Libellé</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let etat of listEtats | filter:searchText">
+                        <td>{{etat.idEtat}}</td>
+                        <td>{{etat.libelleEtat}}</td>
+                        <td><button type="button" [routerLink]="['/updateetat',etat.idEtat]"
+                                class="glyphicon glyphicon-cog btn btn-warning"></button></td>
+                        <td><button type="button" (click)="deleteEtat(etat.idEtat, i)"
+                                class="glyphicon glyphicon-trash btn btn-danger"></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-0">
+        </div>
+    </div>
+</div>

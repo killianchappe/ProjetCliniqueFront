@@ -1,0 +1,47 @@
+.myBlock {
+    margin-top: 50px;
+}
+
+.myRow {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.myCol {
+    margin-bottom: 20px;
+}
+
+.myCard {
+    border-radius: 5px;
+    padding: 0px;
+    margin: 0px;
+    border: 1px darkred solid;
+    background-color: rgba(253, 233, 220, 0.4);
+}
+
+.myButton {
+    background-color: rgb(253, 233, 220);
+    color: darkred;
+    border: 1px darkred solid;
+    padding: 8px;
+    margin: 5px;
+    font-size: 16px;
+}
+
+.myButton:hover {
+    background-color: rgb(253, 233, 220);
+    color: darkred;
+    border: 1px darkred solid;
+    padding: 8px;
+    margin: 5px;
+    text-shadow: darkred 0px 0px 30px;
+}
+
+.myImg {
+    border-radius: 5px;
+}
+
+h3 {
+    text-align: center;
+
+}

@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+        </div>
+        <div class="col-sm-6">
+            <h3>Ajouter une nouvelle salle</h3>
+            <hr />
+            <form [formGroup]="myForm" (ngSubmit)="ajoutSalle()" class="was-validated">
+                <div class="form-group">
+                    <label for="numeroSalle">Numero de salle</label>
+                    <input type="number" class="form-control" id="numeroSalle"
+                        placeholder="Entrer le numéro de la salle" formControlName="numeroSalle"
+                        [(ngModel)]="newSalle.numeroSalle" required>
+                </div>
+                <div class="form-group">
+                    <label for="typeSalle">Type de salle</label>
+                    <input type="text" class="form-control" id="typeSalle" placeholder="Entrer le type de salle"
+                        formControlName="typeSalle" [(ngModel)]="newSalle.typeSalle" required>
+                </div>
+                <button type="submit" class="btn myButton" [disabled]="myForm.invalid">Ajouter</button>
+                <button type="button" (click)="onReset()" class="btn myButton">Réinitialiser</button>
+            </form>
+        </div>
+        <div class="col-sm-3">
+        </div>
+    </div>
+</div>

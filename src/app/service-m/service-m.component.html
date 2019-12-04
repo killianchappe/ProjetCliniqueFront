@@ -1,0 +1,37 @@
+<div class="container myTableServiceM">
+    <div class="row">
+        <div class="col-sm-0">
+        </div>
+        <div class="col-sm-12">
+            <h3>Liste des services médicaux</h3>
+            <hr />
+            <div>
+                <input class="form-control mySearch" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+                    placeholder="Rechercher un patient">
+            </div>
+            <table class="table table-sm table-hover myTable">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let serviceM of listServicesM  | filter:searchText">
+                        <td>{{serviceM.idService}}</td>
+                        <td>{{serviceM.nomService}}</td>
+                        <td><button type="button" [routerLink]="['/updateservicem',serviceM.idService]"
+                                class="glyphicon glyphicon-cog btn btn-warning"></button></td>
+                        <td><button type="button" (click)="deleteServiceM(serviceM.idService, i)"
+                                class="glyphicon glyphicon-trash btn btn-danger"></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-0">
+        </div>
+    </div>
+</div>

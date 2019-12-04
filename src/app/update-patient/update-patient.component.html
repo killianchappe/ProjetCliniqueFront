@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+        </div>
+        <div class="col-sm-6">
+            <h3>Modifier un patient</h3>
+            <hr />
+            <form [formGroup]="myForm" (ngSubmit)="updatePatient(patientCourant)" class="was-validated">
+                <div class="form-group">
+                    <label for="nomPatient">Nom du patient</label>
+                    <input type="text" class="form-control" id="nomPatient" placeholder="Entrer le nom du patient"
+                        formControlName="nomPatient" [(ngModel)]="patientCourant.nomPatient" required>
+                </div>
+                <div class="form-group">
+                    <label for="prenomPatient">Prénom du patient</label>
+                    <input type="text" class="form-control" id="prenomPatient" placeholder="Entrer le prénom du patient"
+                        formControlName="prenomPatient" [(ngModel)]="patientCourant.prenomPatient" required>
+                </div>
+                <div class="form-group">
+                    <label for="dossierPatient">Dossier du patient</label>
+                    <input type="text" class="form-control" id="dossierPatient"
+                        placeholder="Entrer le dossier du patient" formControlName="dossierPatient"
+                        [(ngModel)]="patientCourant.dossierPatient" required>
+                </div>
+                <div class="form-group">
+                    <label for="etatPatient">Choisir l'état du patient</label>
+                    <select [compareWith]="byIdEtat" class="form-control" id="etatPatient"
+                        [(ngModel)]="patientCourant.etatPatient" formControlName="etatPatient" required>
+                        <option *ngFor="let etat of listEtats;" [ngValue]="etat">
+                            {{etat.libelleEtat}}
+                        </option>
+                    </select>
+                </div>
+                <button type="submit" class="btn myButton" [disabled]="myForm.invalid">Modifier</button>
+                <button type="button" (click)="onReset()" class="btn myButton">Réinitialiser</button>
+            </form>
+        </div>
+        <div class="col-sm-3">
+        </div>
+    </div>
+</div>

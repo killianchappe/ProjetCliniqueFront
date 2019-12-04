@@ -1,0 +1,17 @@
+.myButton {
+    background-color: rgb(253, 233, 220);
+    color: darkred;
+    border: 1px darkred solid;
+    padding: 8px;
+    margin: 5px;
+    font-size: 16px;
+}
+
+.myButton:hover {
+    background-color: rgb(253, 233, 220);
+    color: darkred;
+    border: 1px darkred solid;
+    padding: 8px;
+    margin: 5px;
+    text-shadow: darkred 0px 0px 30px;
+}

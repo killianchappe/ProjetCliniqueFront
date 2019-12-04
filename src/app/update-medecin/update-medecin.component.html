@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+        </div>
+        <div class="col-sm-6">
+            <h3>Modifier un médecin</h3>
+            <hr />
+            <form [formGroup]="myForm" (ngSubmit)="updateMedecin(medecinCourant)" class="was-validated">
+                <div class="form-group">
+                    <label for="nomMedecin">Nom du médecin</label>
+                    <input type="text" class="form-control" id="nomMedecin" placeholder="Entrer le nom du médecin"
+                        formControlName="nomMedecin" [(ngModel)]="medecinCourant.nomMedecin" required>
+                </div>
+                <div class="form-group">
+                    <label for="prenomMedecin">Prénom du médecin</label>
+                    <input type="text" class="form-control" id="prenomMedecin" placeholder="Entrer le prénom du médecin"
+                        formControlName="prenomMedecin" [(ngModel)]="medecinCourant.prenomMedecin" required>
+                </div>
+                <div class="form-group">
+                    <label for="serviceMedecin">Choisir le service du médecin</label>
+                    <select [compareWith]="byIdServiceM" class="form-control" id="serviceMedecin"
+                        [(ngModel)]="medecinCourant.serviceMedecin" formControlName="serviceMedecin" required>
+                        <option *ngFor="let serviceM of listServicesM;" [ngValue]="serviceM">
+                            {{serviceM.nomService}}
+                        </option>
+                    </select>
+                </div>
+                <button type="submit" class="btn myButton" [disabled]="myForm.invalid">Modifier</button>
+                <button type="button" (click)="onReset()" class="btn myButton">Réinitialiser</button>
+            </form>
+        </div>
+        <div class="col-sm-3">
+        </div>
+    </div>
+</div>

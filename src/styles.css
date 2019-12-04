@@ -1,0 +1,14 @@
+body {
+    color: darkred;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-image: url('http://www.ortho-max.net/wp-content/uploads/2018/01/Medical-Background-5.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+html, body { height: 100%; }
+body { margin: 0; }
+
+.was-validated {
+    margin-bottom: 80px;
+}

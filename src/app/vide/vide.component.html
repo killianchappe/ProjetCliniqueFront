@@ -1,0 +1,45 @@
+<div class="container myBlock">
+    <div class="row myRow">
+        <div class="col-sm">
+            <h3>Bienvenue! Vous pouvez dés maintenant utiliser notre nouvelle application.</h3>
+        </div>
+    </div>
+    <div class="row myRow">
+        <div class="col-md myCol">
+            <div class="card myCard">
+                <img src="https://blog.wity.fr/wp-content/uploads/2018/04/slider-1-light-2-1-1920x1080.jpg"
+                    class="card-img-top myImg" alt="...">
+                <hr />
+                <div class="card-body">
+                    <h4 class="card-title">Nos Médecins</h4>
+                    <p class="card-text">Voir la liste des médecins et leurs services</p>
+                    <a [routerLink]="['/medecin']" class="btn myButton">Voir</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md myCol">
+            <div class="card myCard">
+                <img src="https://www.essentiel-sante-magazine.fr/wp-content/uploads/2013/10/droit-patients-498x281.jpg"
+                    class="card-img-top myImg" alt="...">
+                <hr />
+                <div class="card-body">
+                    <h4 class="card-title">Nos Patients</h4>
+                    <p class="card-text">Voir la liste des patients et leurs états actuels</p>
+                    <a [routerLink]="['/patient']" class="btn myButton">Voir</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md myCol">
+            <div class="card myCard">
+                <img src="https://www.molnlycke.com/contentassets/94bb611f4cf74d5a84a26ec71d0c2ddc/ongoing-operation-in-or.jpg"
+                    class="card-img-top myImg" alt="...">
+                <hr />
+                <div class="card-body">
+                    <h4 class="card-title">Opérations prévues</h4>
+                    <p class="card-text">Consulter la liste des opérations</p>
+                    <a [routerLink]="['/operation']" class="btn myButton">Voir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

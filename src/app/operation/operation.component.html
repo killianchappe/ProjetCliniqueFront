@@ -1,0 +1,43 @@
+<div class="container myTableOperation">
+    <div class="row">
+        <div class="col-sm-0">
+        </div>
+        <div class="col-sm-12">
+            <h3>Liste des opérations</h3>
+            <hr />
+            <div>
+                <input class="form-control mySearch" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+                    placeholder="Rechercher une opération">
+            </div>
+            <table class="table table-sm table-hover myTable">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Patient</th>
+                        <th scope="col">Médecin</th>
+                        <th scope="col">Salle</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let operation of listOperations | filter:searchText">
+                        <td>{{operation.idOperation}}</td>
+                        <td>{{operation.dateOperation|date:"dd/MM/yyyy"}}</td>
+                        <td>{{operation.patientOperation.nomPatient}}</td>
+                        <td>{{operation.medecinOperation.nomMedecin}}</td>
+                        <td>{{operation.salleOperation.numeroSalle}}</td>
+                        <td><button type="button" [routerLink]="['/updateoperation',operation.idOperation]"
+                                class="glyphicon glyphicon-cog btn btn-warning"></button></td>
+                        <td><button type="button" (click)="deleteOperation(operation.idOperation, i)"
+                                class="glyphicon glyphicon-trash btn btn-danger"></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-0">
+        </div>
+    </div>
+</div>

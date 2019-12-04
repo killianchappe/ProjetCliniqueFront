@@ -1,0 +1,41 @@
+<div class="container myTableMedecin">
+    <div class="row">
+        <div class="col-sm-0">
+        </div>
+        <div class="col-sm-12">
+            <h3>Liste des médecins</h3>
+            <hr />
+            <div>
+                <input class="form-control mySearch" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+                    placeholder="Rechercher un médecin">
+            </div>
+            <table class="table table-sm table-hover myTable">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Prenom</th>
+                        <th scope="col">Service</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let medecin of listMedecins | filter:searchText">
+                        <td>{{medecin.idMedecin}}</td>
+                        <td>{{medecin.nomMedecin}}</td>
+                        <td>{{medecin.prenomMedecin}}</td>
+                        <td>{{medecin.serviceMedecin.nomService}}</td>
+                        <td><button type="button" [routerLink]="['/updatemedecin',medecin.idMedecin]"
+                                class="glyphicon glyphicon-cog btn btn-warning"></button></td>
+                        <td><button type="button" (click)="deleteMedecin(medecin.idMedecin, i)"
+                                class="glyphicon glyphicon-trash btn btn-danger"></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-0">
+        </div>
+    </div>
+</div>

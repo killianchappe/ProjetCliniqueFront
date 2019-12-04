@@ -1,0 +1,26 @@
+thead {
+    color: darkred;
+    border: 1px darkred solid;
+    background-color: rgb(253, 233, 220);
+}
+
+tbody {
+    color:darkred;
+}
+
+tbody tr {
+    border: 1px solid darkred;
+}
+
+.mySearch {
+    width: 200px;
+    border-left: darkred 1px solid;
+    border-top: darkred 1px solid;
+    border-right: darkred 1px solid;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.myTable {
+    background-color: rgba(253, 233, 220, 0.5);
+    margin-bottom: 150px;
+}

@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+        </div>
+        <div class="col-sm-6">
+            <h3>Ajouter une nouvelle opération</h3>
+            <hr />
+            <form [formGroup]="myForm" (ngSubmit)="ajoutOperation()" class="was-validated">
+                <div class="form-group">
+                    <label for="dateOperation">Date de l'opération</label>
+                    <input type="date" class="form-control" id="dateOperation"
+                        placeholder="Choisir la date de l'opération" formControlName="dateOperation"
+                        [(ngModel)]="newOperation.dateOperation" required>
+                </div>
+                <div class="form-group">
+                    <label for="patientOperation">Choisir un patient</label>
+                    <select class="form-control" id="patientOperation" [(ngModel)]="newOperation.patientOperation"
+                        formControlName="patientOperation" required>
+                        <option *ngFor="let patient of listPatients;" [ngValue]="patient">
+                            {{patient.nomPatient}}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="medecinOperation">Choisir un médecin</label>
+                    <select class="form-control" id="medecinOperation" [(ngModel)]="newOperation.medecinOperation"
+                        formControlName="medecinOperation" required>
+                        <option *ngFor="let medecin of listMedecins;" [ngValue]="medecin">
+                            {{medecin.nomMedecin}}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="salleOperation">Choisir une salle</label>
+                    <select class="form-control" id="salleOperation" [(ngModel)]="newOperation.salleOperation"
+                        formControlName="salleOperation" required>
+                        <option *ngFor="let salle of listSalles;" [ngValue]="salle">
+                            {{salle.numeroSalle}}
+                        </option>
+                    </select>
+                </div>
+                <button type="submit" class="btn myButton" [disabled]="myForm.invalid">Ajouter</button>
+                <button type="button" (click)="onReset()" class="btn myButton">Réinitialiser</button>
+            </form>
+        </div>
+        <div class="col-sm-3">
+        </div>
+    </div>
+</div>
